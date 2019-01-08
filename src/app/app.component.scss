@@ -1,0 +1,123 @@
+@import '~src/assets/colors.scss';
+
+section{
+  overflow: hidden;
+  margin-bottom: 25vh;
+  padding-bottom: 25vh;
+}
+
+.vertical-align-wrapper{
+  transform: translateZ(80px);
+}
+
+.title{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  color: $textual_blue;
+  >h1{
+    font-weight: bolder;
+    font-size: 56px;
+  }
+  >h3{
+    font-weight: lighter;
+    font-size: 22px;
+  }
+}
+
+app-scroll-icon{
+  bottom: 28vh;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transform: translateZ(80px);
+  &.shadow{
+    transform: translateZ(0);
+    background: transparent;
+  }
+}
+
+[djkParallaxContainer]{
+  height: 100vh;
+  .shadow{
+    background: black;
+  }
+  >app-scroll-icon{
+    bottom: 28vh;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transform: translateZ(80px);
+    &.shadow{
+      transform: translateZ(0);
+      background: transparent;
+      opacity: .4;
+    }
+  }
+  >.landing-one{
+    position: absolute;
+    left: -10vw;
+    top: -15vh;
+    width: 52vw;
+    height: 50vh;
+    background: $beige_3;
+    &.shadow{
+      background: black;
+    }
+  }
+  >.landing-two{
+    position: absolute;
+    right: -30vw;
+    top: -15vh;
+    width: 57vw;
+    height: 50vh;
+    background: $beige_2;
+    &.shadow{
+      background: black;
+    }
+  }
+  >.landing-three{
+    position: absolute;
+    left: -5vw;
+    bottom: 8vh;
+    width: 52vw;
+    height: 30vh;
+    background: $beige_2;
+    &.shadow{
+      background: black;
+    }
+  }
+  >.landing-four{
+    position: absolute;
+    right: -5vw;
+    bottom: 13vh;
+    width: 60vw;
+    height: 30vh;
+    background: $complentary_1;
+    &.shadow{
+      background: black;
+    }
+  }
+  >.landing-five{
+    position: absolute;
+    right: 10vw;
+    bottom: 40vh;
+    width: 13vw;
+    height: 20vh;
+    background: white;
+    &.shadow{
+      background: black;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .title{
+    >h1{
+      font-size: 32px;
+    }
+    >h3{
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!-- Here goes the projects component -->
+<router-outlet></router-outlet>
+
+<section>
+  <div djkParallaxContainer djkPerspective="850px">
+
+    <div class='vertical-align-wrapper'>
+      <div class='vertical-align'>
+        <div class='title'>
+          <h1>WEB DEVELOPMENT</h1>
+          <h3>full-stack. passionate. responsive. newest techs. best practices.</h3>
+        </div>
+      </div>
+    </div>
+    <app-scroll-icon></app-scroll-icon>
+    <app-scroll-icon class='shadow' color='black'></app-scroll-icon>
+
+    <div class='landing-one' [@landing-one]='loadingState'></div>
+    <div class='landing-one shadow' [@landing-one-shadow]='loadingState'></div>
+
+    <div class='landing-two' [@landing-two]='loadingState'></div>
+    <div class='landing-two shadow' [@landing-two-shadow]='loadingState'></div>
+
+    <div class='landing-three' [@landing-three]='loadingState'></div>
+    <div class='landing-three shadow' [@landing-three-shadow]='loadingState'></div>
+
+    <div class='landing-four' [@landing-four]='loadingState'></div>
+    <div class='landing-four shadow' [@landing-four-shadow]='loadingState'></div>
+
+    <div class='landing-five' [@landing-four]='loadingState'></div>
+    <div class='landing-five shadow' [@landing-four-shadow]='loadingState'></div>
+  </div>
+</section>

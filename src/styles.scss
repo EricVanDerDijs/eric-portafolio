@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,700');
+
+*, html, body{
+  font-family: Raleway, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body{
+  background: $beige_bg;  
+}
+
+.vertical-align-wrapper{
+  display: table;
+  height: 100%;
+  width: 100%;
+  >.vertical-align{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
