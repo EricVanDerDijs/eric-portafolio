@@ -6,12 +6,14 @@ import { AppRoutingModule } from './router/app-routing.module';
 import { AppComponent } from './app.component';
 import { ParallaxContainerDirective } from './directives/parallax-container.directive';
 import { ScrollIconComponent } from './components/scroll-icon/scroll-icon.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParallaxContainerDirective,
-    ScrollIconComponent
+    ScrollIconComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

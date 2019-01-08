@@ -1,23 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { 
-  landingOneAnim, landingOneShadowAnim,
-  landingTwoAnim, landingTwoShadowAnim,
-  landingThreeAnim, landingThreeShadowAnim,
-  landingFourAnim, landingFourShadowAnim,
-  landingFiveAnim, landingFiveShadowAnim
- } from 'src/app/animations/landing-paralax-items'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    landingOneAnim, landingOneShadowAnim,
-    landingTwoAnim, landingTwoShadowAnim,
-    landingThreeAnim, landingThreeShadowAnim,
-    landingFourAnim, landingFourShadowAnim,
-    landingFiveAnim, landingFiveShadowAnim
-  ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
   

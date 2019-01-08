@@ -146,3 +146,18 @@ export const landingFiveShadowAnim = trigger('landing-five-shadow', [
 ]
 )
 
+export const landingTitle = trigger('landing-title', [
+    state('loading', style({
+      transform: 'translateY(-65%)',
+      opacity: '0'
+    })),
+    state('loaded', style({
+      transform: 'translateY(0)',
+      opacity: '1'
+    })),
+    transition('loading => loaded', [
+      animate('0.9s 0.9s ease-in-out')
+    ])
+  ]
+)
+
