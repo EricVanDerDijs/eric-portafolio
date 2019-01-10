@@ -4,7 +4,7 @@ import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 @Directive({
   selector: '[djkParallaxContainer]'
 })
-export class ParallaxContainerDirective implements OnInit, OnDestroy {
+export class ParallaxContainerDirective implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private el: ElementRef) { }
 
@@ -12,9 +12,9 @@ export class ParallaxContainerDirective implements OnInit, OnDestroy {
   private halfHeight: number;
   private yRotation: number = 0;
 
-  @Input('djkPerspective') perspective = '4000px';
-  @Input('djkXMaxRotation') xMaxRotation = 30;
-  @Input('djkYMaxRotation') yMaxRotation = 20;
+  @Input('perspective') perspective = '4000px';
+  @Input('xMaxRotation') xMaxRotation = 30;
+  @Input('yMaxRotation') yMaxRotation = 20;
 
   ngOnInit() {
     // set initial screen dimensions & add 'rezise' listener
@@ -44,8 +44,16 @@ export class ParallaxContainerDirective implements OnInit, OnDestroy {
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
     const topOffset = event.currentTarget.parentElement.getBoundingClientRect().top
-    const xRotation = ( (this.halfHeight - (event.clientY - topOffset)) / this.halfHeight ) * this.xMaxRotation;
-    this.yRotation = ( (event.clientX - this.halfWidth) / this.halfWidth ) * this.yMaxRotation;
+
+    let yMousePos = this.halfHeight - (event.clientY - topOffset)
+    yMousePos = yMousePos > this.halfHeight ? this.halfHeight : yMousePos
+
+    let xMousePos = event.clientX - this.halfWidth
+    xMousePos = xMousePos > this.halfWidth ? this.halfWidth : xMousePos
+    
+    const xRotation = ( yMousePos / this.halfHeight ) * this.xMaxRotation;
+    this.yRotation = ( xMousePos / this.halfWidth ) * this.yMaxRotation;
+    
     window.requestAnimationFrame( () => {
       this.setRotation(xRotation, this.yRotation);
     })
@@ -60,7 +68,7 @@ export class ParallaxContainerDirective implements OnInit, OnDestroy {
   setScrollRotation = (): void => {
     let limitedTopOffset = this.el.nativeElement.parentElement.getBoundingClientRect().top
     if( Math.abs( limitedTopOffset ) > this.halfHeight ){
-      limitedTopOffset = this.halfHeight
+      limitedTopOffset = this.halfHeight * Math.sign(limitedTopOffset)
     }
     const xRotation = ( limitedTopOffset / this.halfHeight ) * this.xMaxRotation
     this.setRotation(xRotation, this.yRotation)

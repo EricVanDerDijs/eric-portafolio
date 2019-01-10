@@ -1,0 +1,65 @@
+@import '~src/assets/colors.scss';
+
+app-hamburger-button{
+  position: fixed;
+  top: 25vh;
+  z-index: -2;
+}
+
+app-close-button{
+  display: none;
+}
+
+.sidebar{
+  height: 100vh;
+  width: 30vw;
+  color: $textual_blue;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: white;
+
+  &.mobile{
+    width: 100vw;
+    text-align: center;
+    >.vertical-align{
+      app-close-button{
+        margin-top: 30px;
+        display: block;
+      }
+      >.sections>li{
+        padding: 0;
+      }
+    }
+  }
+
+  >.vertical-align{
+
+    >.personal-info{
+      margin-left: 3vw;
+      margin-bottom: 20px;
+      >h2{
+        font-weight: bolder;
+      }
+      >a{
+        font-weight: lighter;
+      }
+    }
+    >.sections{
+      list-style: none;
+      >li{
+        margin-top: 10px;
+        height: 26px;
+        cursor: pointer;
+        padding-left: 5vw;
+        transition: .5s transform ease-out;
+        &:hover{
+          transform: translateX(15px);
+        }
+        &:last-child{
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

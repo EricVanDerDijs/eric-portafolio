@@ -1,4 +1,9 @@
 <!-- Here goes the projects component -->
 <router-outlet></router-outlet>
 
-<app-landing [loadingState]='loadingState'></app-landing>
+<app-sidebar 
+  [loadingState]='loadingState'
+  [isMobile]='isMobile'>
+</app-sidebar>
+
+<app-landing [loadingState]='loadingState' id='landing'></app-landing>

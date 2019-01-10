@@ -132,18 +132,18 @@ export const landingFiveAnim = trigger('landing-five', [
 )
 
 export const landingFiveShadowAnim = trigger('landing-five-shadow', [
-  state('loading', style({
-    transform: 'translateX(160px) translateY(60px) translateZ(0) rotateZ(-12deg) skewX(-21deg)',
-    opacity: '.8'
-  })),
-  state('loaded', style({
-    transform: 'translateX(0px) translateY(0px) translateZ(0) rotateZ(-12deg) skewX(-21deg)',
-    opacity: '.4'
-  })),
-  transition('loading => loaded', [
-    animate('0.9s ease')
-  ])
-]
+    state('loading', style({
+      transform: 'translateX(160px) translateY(60px) translateZ(0) rotateZ(-12deg) skewX(-21deg)',
+      opacity: '.8'
+    })),
+    state('loaded', style({
+      transform: 'translateX(0px) translateY(0px) translateZ(0) rotateZ(-12deg) skewX(-21deg)',
+      opacity: '.4'
+    })),
+    transition('loading => loaded', [
+      animate('0.9s ease')
+    ])
+  ]
 )
 
 export const landingTitle = trigger('landing-title', [

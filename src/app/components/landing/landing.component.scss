@@ -2,11 +2,13 @@
 
 section.landing{
   overflow: hidden;
-  margin-bottom: 25vh;
+  margin-bottom: 50vh;
   padding-bottom: 25vh;
   
   .vertical-align-wrapper{
     transform: translateZ(80px);
+    height: 100%;
+    width: 100%;
   }
   
   .title{
@@ -105,6 +107,16 @@ section.landing{
       }
       >h3{
         font-size: 18px;
+      }
+    }
+  }
+  @media (max-width: 360px){
+    .title{
+      >h1{
+        font-size: 20px;
+      }
+      >h3{
+        font-size: 14px;
       }
     }
   }

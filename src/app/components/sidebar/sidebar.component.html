@@ -1,0 +1,39 @@
+<nav 
+  class='sidebar vertical-align-wrapper' 
+  [ngClass]="{'mobile' : isMobile}"
+  [@sidebar-visibility]='visibility'>
+  <div class='vertical-align'>
+
+    <div class='personal-info animated'>
+      <h2>Eric Van Der Dijs</h2>
+      <a href="mailto:eric2vanderdijs@gmail.com">
+        eric2vanderdijs@gmail.com
+      </a>
+    </div>
+  
+    <ul class='sections'>
+      <!-- <li class='animated'>
+        <a href="#about" (click)='scroll($event)'>About me</a>
+      </li> -->
+      <li class='animated'>
+        <a href="#projects" (click)='scroll($event)'>Projects</a>
+      </li>
+      <!-- <li class='animated'>
+        <a href="#bydCode" (click)='scroll($event)'>Beyond Code</a>
+      </li> -->
+      <li class='animated'>
+        <a href="#landing" (click)='scroll($event)'>Back to top</a>
+      </li>
+    </ul>
+
+    <app-close-button
+      (click)="toggleVisibility()">
+    </app-close-button>
+
+  </div>
+</nav>
+  
+<app-hamburger-button
+  (click)="toggleVisibility()"
+  [@sidebar-button-visibility]='buttonVisibility'>
+</app-hamburger-button>

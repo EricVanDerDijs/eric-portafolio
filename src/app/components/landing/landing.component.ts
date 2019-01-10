@@ -6,7 +6,7 @@ import {
   landingFourAnim, landingFourShadowAnim,
   landingFiveAnim, landingFiveShadowAnim,
   landingTitle
- } from 'src/app/animations/landing-paralax-items'
+ } from './landing.animations'
  
 @Component({
   selector: 'app-landing',
@@ -23,7 +23,7 @@ import {
 })
 export class LandingComponent {
   
-  @Input() loadingState: string 
+  @Input() loadingState: string
 
   constructor() { }
 
