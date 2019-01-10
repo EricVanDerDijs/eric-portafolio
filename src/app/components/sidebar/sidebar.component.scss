@@ -51,8 +51,12 @@ app-close-button{
         margin-top: 10px;
         height: 26px;
         cursor: pointer;
-        padding-left: 5vw;
         transition: .5s transform ease-out;
+        >a{
+          padding-left: 5vw;
+          display: inline-block;
+          width: 100%;
+        }
         &:hover{
           transform: translateX(15px);
         }
