@@ -34,6 +34,9 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
               this.toggleButtonVisibility()
             }  
           } else {
+            if(this.buttonVisibility === 'visible'){
+              this.buttonVisibility = 'hidden'
+            }
             if(topOffset >= this.requiredOffset && this.visibility === 'hidden'){
               this.toggleVisibility()
             }

@@ -20,6 +20,7 @@ app-close-button{
   background: white;
 
   &.mobile{
+    z-index: 3000;
     width: 100vw;
     text-align: center;
     >.vertical-align{
@@ -27,7 +28,10 @@ app-close-button{
         margin-top: 30px;
         display: block;
       }
-      >.sections>li{
+      >.personal-info{
+        margin-left: 0;
+      }
+      >.sections>li>a{
         padding: 0;
       }
     }
