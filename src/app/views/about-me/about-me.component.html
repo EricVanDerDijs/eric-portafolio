@@ -1,0 +1,39 @@
+<section class='about'
+  [ngClass]="{'mobile' : isMobile}">
+    <div djkParallaxContainer perspective="850px">
+  
+      <h3 [@text]='visibility'>About me</h3>
+
+      <div class='bio' [@text]='visibility'>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas neque aliquid perferendis nihil impedit iure dolores delectus, ducimus voluptates optio a beatae eum voluptas reprehenderit fuga deleniti illo similique sit?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatem, fuga dolor qui recusandae iusto iste, laboriosam earum, velit impedit nulla reprehenderit magni. Veritatis voluptas nihil quia, ipsum adipisci praesentium.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, eum facilis. Nesciunt maxime modi provident magnam nostrum cumque perspiciatis sit iste fuga tempore consequatur saepe quis laudantium deserunt, perferendis eaque?</p>
+      </div>      
+
+      <div 
+        class='img'
+        [@picture]='visibility'>
+          <div class='parallax-box'>
+            <img src="assets/eric-picture.png" alt="Eric Van Der Dijs">
+          </div>
+          <div class='parallax-shadow'></div>
+      </div>
+
+      <div 
+        class='decoration-1' 
+        [@decoration1]='visibility'
+        [ngClass]='visibility === "hidden" && "hidden"'>
+          <div class='parallax-box'></div>
+          <div class='parallax-shadow'></div>
+      </div>
+
+      <div 
+        class='decoration-2'
+        [@decoration2]='visibility'
+        [ngClass]='visibility === "hidden" && "hidden"'>
+          <div class='parallax-box'></div>
+          <div class='parallax-shadow'></div>
+      </div>
+
+    </div>
+  </section>

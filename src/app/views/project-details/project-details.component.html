@@ -1,0 +1,66 @@
+<div class='project-detail'>
+  <div class='animation-container' @details>
+
+    <div class="header">
+      <div class='texts'>
+        <h3>{{project.name}}</h3>
+        <p>{{project.year}} - {{project.short_description}}</p>
+      </div>
+      <div class="close-button">
+        <app-close-button
+          (click)='closeProject()'
+          color='white'>
+        </app-close-button>
+      </div>
+    </div>
+  
+    <div class="content">
+  
+      <div class='info desktop'>
+        <h4>Description</h4>
+        <div class="description">
+          <p>{{project.description}}</p>
+        </div>
+        <h4>Technologies</h4>
+        <div class='technologies'>
+            <span 
+              *ngFor='let tech of project.technologies'
+              class="tech">
+              {{tech}}
+            </span>
+          </div>
+      </div>
+  
+      <div class="video">
+        <div class="inner-width">
+          <div class='iframe-container'>
+            <iframe 
+              [src]="this.project ? getTrustedUrl(project.videoUrl) : null" 
+              width="560" height="315" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen="allowFullScreen">
+            </iframe>
+          </div>
+        </div>
+      </div>
+  
+      <div class='info mobile'>
+        <h4>Technologies</h4>
+        <div class='technologies'>
+          <span 
+            *ngFor='let tech of project.technologies'
+            class="tech">
+            {{tech}}
+          </span>
+        </div>
+        <h4>Description</h4>
+        <div class="description">
+          <p>{{project.description}}</p>
+        </div>
+      </div>
+  
+    </div>
+  </div>  
+
+</div>

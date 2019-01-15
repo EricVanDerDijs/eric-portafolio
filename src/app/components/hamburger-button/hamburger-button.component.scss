@@ -2,19 +2,15 @@
 
 .hamburger-container{
   cursor: pointer;
-  height: 60px;
-  width: 60px;
-  border-radius: 0 5px 5px 0;
-  background: $analog_1;
+  height: 50px;
+  width: 50px;
+  background: transparent;
   border: none;
   outline: none;
-  &:hover{
-    background: $analog_2;
-  }
   >.horizontal-bar{
     width: 70%;
-    height: 8px;
-    background: white;
+    height: 4px;
+    background: $textual_blue;
     margin: 6px auto;
     border-radius: 15px;
     &:first-child{

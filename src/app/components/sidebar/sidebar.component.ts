@@ -9,7 +9,7 @@ import { sidebarAnim, sidebarButtonAnim } from './sidebar.animations'
 })
 export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  private requiredOffset: number = window.innerHeight * .75;
+  private requiredOffset: number = window.innerHeight;
   private scrollListener: Function;
   visibility: string = 'hidden'
   buttonVisibility: string = 'hidden'
@@ -68,11 +68,11 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
       this.toggleVisibility()
 
       setTimeout(() => {
-        document.querySelector(targetHash).scrollIntoView({ behavior: 'smooth' })
+        document.querySelector(targetHash).scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 800);
 
     } else {
-      document.querySelector(targetHash).scrollIntoView({ behavior: 'smooth' })
+      document.querySelector(targetHash).scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 

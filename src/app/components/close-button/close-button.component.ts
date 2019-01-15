@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-close-button',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CloseButtonComponent {
 
+  @Input() color: string;
+  
   constructor() { }
 
 }

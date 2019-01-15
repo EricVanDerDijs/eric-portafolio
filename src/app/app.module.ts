@@ -11,6 +11,8 @@ import { ProjectsComponent } from './views/projects/projects.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HamburgerButtonComponent } from './components/hamburger-button/hamburger-button.component';
 import { CloseButtonComponent } from './components/close-button/close-button.component';
+import { ProjectDetailsComponent } from './views/project-details/project-details.component';
+import { AboutMeComponent } from './views/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CloseButtonComponent } from './components/close-button/close-button.com
     ProjectsComponent,
     SidebarComponent,
     HamburgerButtonComponent,
-    CloseButtonComponent
+    CloseButtonComponent,
+    ProjectDetailsComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,

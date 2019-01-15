@@ -1,0 +1,126 @@
+@import '~src/assets/colors.scss';
+
+.about{
+  width: 74%;
+  margin-left: 26%;
+  margin-bottom: 50vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  padding-left: 4%;
+  height: 110vh;
+  overflow: hidden;
+  &.mobile{
+    height: 160vh;
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    >[djkParallaxContainer]{
+      .img{
+        top: auto;
+      }
+      .bio{
+        margin: auto;
+        width: 90%;
+      }
+      .decoration-2{
+        left: 5vw;
+      }
+    }
+  }
+
+  >[djkParallaxContainer]{
+    padding: 30px;
+    min-height: 98%;
+
+    >div{
+      transform-style: preserve-3d;
+      >.parallax-box{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+      >.parallax-shadow{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+      }
+    }
+
+    >h3{
+      color: $textual_blue;
+      font-size: 46px;
+      font-weight: bolder;
+      margin-bottom: 46px;
+      transform: translateZ(80px);
+    }
+    >.bio{
+      color: $textual_blue;
+      width: 60%;
+      transform: translateZ(80px);
+      >p{
+        margin-bottom: 10px;
+      }
+    }
+
+    .img{
+      position: absolute;
+      top: 10vh;
+      right: 6vw;
+      width: 238px;
+      height: 338px;
+      >.parallax-box{
+        transform: translateZ(60px);
+        >img{
+          width: 100%;
+        }
+      }
+    }
+
+    .decoration-1{
+      position: absolute;
+      height: 62vh;
+      width: 20vw;
+      top: -5vh;
+      right: 19vw;
+      transform: skewX(45deg) rotateZ(45deg);
+      &.hidden{
+        display: none;
+      }
+      >.parallax-box{
+        background: white;
+        background: $analog_1;
+        transform: translateZ(30px)
+      }
+    }
+
+    .decoration-2{
+      position: absolute;
+      height: 37vh;
+      width: 29vw;
+      left: -.5vw;
+      bottom: 5vh;
+      transform: skewY(-147deg) rotateZ(-13deg);
+      &.hidden{
+        display: none;
+      }
+      >.parallax-box{
+        background: $beige_2;
+        transform: translateZ(30px)
+      }
+    }
+  }
+
+  @media (max-width: 992px){
+    >[djkParallaxContainer] .img{
+        width: 200px;
+        height: 284px;
+      }
+  }
+
+  @media (max-width: 567px){
+    >[djkParallaxContainer] .img{
+        display: none;
+      }
+  }
+
+}

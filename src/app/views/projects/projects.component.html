@@ -1,3 +1,27 @@
-<p>
-  projects works!
-</p>
+<section class='projects'
+  [ngClass]="{'mobile' : isMobile}">
+    <div djkParallaxContainer perspective="850px">
+  
+      <h3 [@projects-title]='visibility'>Projects</h3>
+
+      <ul @projects *ngIf='visibility === "visible"'>
+        <li 
+          *ngFor='let project of projectsList; index as i'
+          [@selected]='selectedProjectIndex === i'
+          (click)='selectProject(i)'>
+            <div class='parallax-box' [id]='i'>
+              <h4>{{project.name}}</h4>
+              <p>{{project.year}} - {{project.short_description}}</p>
+            </div>
+            <div class='parallax-shadow'></div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <app-project-details 
+    @details
+    *ngIf='selectedProject'
+    [project]=selectedProject>
+  </app-project-details>

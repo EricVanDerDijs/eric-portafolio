@@ -1,0 +1,75 @@
+@import '~src/assets/colors.scss';
+
+.projects{
+  width: 74%;
+  margin-left: 26%;
+  padding-left: 4%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &.mobile{
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    padding-left: 0;
+    >[djkParallaxContainer]{
+      padding-left: 0;
+    }
+  }
+
+  >[djkParallaxContainer]{
+    padding: 30px;
+    min-height: 98%;
+
+    >h3{
+      color: $textual_blue;
+      font-size: 46px;
+      font-weight: bolder;
+      margin-bottom: 46px;
+      transform: translateZ(80px);
+    }
+    >ul{
+      list-style: none;
+      margin-left: 10vw;
+      height: 60%;
+      >li{
+        width: 100%;
+        margin-bottom: 25px;
+        height: 60px;
+        transform-style: preserve-3d;
+        >.parallax-box{
+          // 3d styles
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          transform: translateZ(50px);
+          // aditional styling
+          cursor: pointer;
+          background: $beige_3;
+          padding: 10px;
+          >p{
+            font-weight: lighter;
+          }
+          &:hover{
+            animation: hoverColor .3s ease forwards;
+          }
+          @keyframes hoverColor {
+            0%{ background: $beige_3 }
+            100%{ background: $beige_2 }
+          }
+        }
+        >.parallax-shadow{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          background: rgba(0,0,0,0.4);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    >[djkParallaxContainer]>ul>li {
+      height: 75px;
+    }
+  }
+}

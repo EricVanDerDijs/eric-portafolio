@@ -1,4 +1,4 @@
 <button class='close-container'>
-  <div class='bar'></div>
-  <div class='bar second'></div>
+  <div class='bar' [ngStyle]="color && {'background': color}"></div>
+  <div class='bar second' [ngStyle]="color && {'background': color}"></div>
 </button>

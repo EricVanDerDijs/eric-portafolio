@@ -1,9 +1,35 @@
 @import '~src/assets/colors.scss';
 
-app-hamburger-button{
+.sidebar-mobile{
   position: fixed;
-  top: 25vh;
-  z-index: -2;
+  top: 0;
+  background: white;
+  width: 70px;
+  height: 100vh;
+  display: table;
+  >.vertical-align{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    >.personal-info{
+      >h2{
+        width: 45px;
+        height: 27vh;
+        font-size: 24px;
+        font-weight: bolder;
+        display: inline-block;
+      }
+      >a{
+        display: inline-block;
+        width: 15px;
+        writing-mode: vertical-lr;
+        text-orientation: sideways;
+        transform: rotateZ(180deg);
+        font-weight: lighter;
+        margin-left: 3px;
+      }
+    }
+  }
 }
 
 app-close-button{
@@ -20,7 +46,7 @@ app-close-button{
   background: white;
 
   &.mobile{
-    z-index: 3000;
+    z-index: 200;
     width: 100vw;
     text-align: center;
     >.vertical-align{

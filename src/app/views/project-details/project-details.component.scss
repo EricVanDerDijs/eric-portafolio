@@ -1,0 +1,150 @@
+@import '~src/assets/colors.scss';
+
+.project-detail{
+  perspective: 850px;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  z-index: 300;
+  >.animation-container{
+    padding: 10px;
+    overflow: auto;
+    box-shadow: -15px 10px 0 rgba(0,0,0,.4);
+    background: $beige_2;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  .header{
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    display: flex;
+    box-shadow: -3px 6px 0 rgba(0,0,0,0.4);
+    background: $analog_1;
+    >.texts{
+      width: calc(100% - 70px);
+      >h3{
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      font-size: 32px;
+      font-weight: bolder;
+      }
+      >p{
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        font-size: 20px;
+        font-weight: lighter;
+      }
+    }
+    >.close-button{
+      position: relative;
+      width: 70px;
+      >app-close-button{
+        position: relative;
+        top: 0;
+        margin: auto;
+      }
+    }
+  }
+  .content{
+    height: calc(100vh - 130px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >.info.mobile{
+      display: none;
+    }
+    >.info{
+      width: 30%;
+      height: 100%;
+      padding: 20px;
+      background: white;
+      box-shadow: -3px 6px 0 rgba(0,0,0,0.4);
+      color: $textual_blue;
+      >h4{
+        font-size: 20px;
+        font-weight: normal;
+        margin-bottom: 5px;
+      }
+      >.technologies{
+        margin-bottom: 15px;
+        >span{
+          display: inline-block;
+          margin-right: 5px;
+          font-size: 14px;
+          font-weight: lighter;
+          transform: skewX(-15deg);
+          &::after{
+            content: '-';
+          }
+          &:last-child::after{
+            content: '';
+          }
+        }
+      }
+      >.description{
+        font-weight: lighter;
+        margin-bottom: 15px;
+      }
+    }
+    >.video{
+      width: 70%;
+      margin: 10px 0 10px 10px;
+      >.inner-width{
+        width: 100%;
+        >.iframe-container{
+          box-shadow: -3px 6px 0 rgba(0,0,0,0.4);
+          height: 0;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          padding-bottom: 52.26%;
+          border: 5px solid white;
+          >iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: white;
+          }
+        }
+      }
+    }
+  } 
+
+  @media (min-width: 992px){
+    .content>.video>.inner-width{
+        width: 665px;
+        margin: auto;
+      }
+  }
+
+  @media (max-width: 768px){
+    .header>.texts{
+      h3{
+        font-size: 22px;
+      }
+      p{
+        font-size: 16px;
+      }
+    }
+    .content{
+      display: block;
+      >.info.desktop{
+        display: none;
+      }
+      >.video{
+        width: 100%;
+        margin: 0;
+      }
+      >.info.mobile{
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  }
+
+}

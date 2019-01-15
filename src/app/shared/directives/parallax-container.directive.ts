@@ -12,11 +12,11 @@ export class ParallaxContainerDirective implements OnInit, AfterViewInit, OnDest
   private halfHeight: number;
   private yRotation: number = 0;
 
-  @Input('perspective') perspective = '4000px';
-  @Input('xMaxRotation') xMaxRotation = 30;
-  @Input('yMaxRotation') yMaxRotation = 20;
+  @Input() perspective = '4000px';
+  @Input() xMaxRotation = 30;
+  @Input() yMaxRotation = 20;
 
-  ngOnInit() {
+  ngOnInit() {    
     // set initial screen dimensions & add 'rezise' listener
     this.setDimensions();
     window.addEventListener('scroll', this.onScroll );
@@ -38,28 +38,27 @@ export class ParallaxContainerDirective implements OnInit, AfterViewInit, OnDest
   }
 
   setDimensions = ():void => {
-    this.halfWidth =  window.innerWidth / 2;
-    this.halfHeight =  window.innerHeight / 2;
+    this.halfWidth =  ( window.innerWidth ) / 2;
+    this.halfHeight =  ( window.innerHeight ) / 2;
   }
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
-    const topOffset = event.currentTarget.parentElement.getBoundingClientRect().top
+    const boundings = this.el.nativeElement.parentElement.getBoundingClientRect()
 
-    let yMousePos = this.halfHeight - (event.clientY - topOffset)
-    yMousePos = yMousePos > this.halfHeight ? this.halfHeight : yMousePos
-
-    let xMousePos = event.clientX - this.halfWidth
-    xMousePos = xMousePos > this.halfWidth ? this.halfWidth : xMousePos
-    
+    let yMousePos = this.halfHeight + (boundings.top / 2) - event.clientY
+    yMousePos = Math.abs(yMousePos / this.halfHeight) > 1 ? this.halfHeight : yMousePos
     const xRotation = ( yMousePos / this.halfHeight ) * this.xMaxRotation;
-    this.yRotation = ( xMousePos / this.halfWidth ) * this.yMaxRotation;
-    
+
+    let xMousePos = event.clientX - this.halfWidth - (boundings.left / 2)
+    xMousePos = Math.abs(xMousePos / (this.halfWidth - (boundings.left / 2) )) > 1 ? this.halfWidth : xMousePos
+    this.yRotation = ( xMousePos / ( this.halfWidth - (boundings.left / 2) ) ) * this.yMaxRotation;
+
     window.requestAnimationFrame( () => {
       this.setRotation(xRotation, this.yRotation);
     })
   }
 
-  onScroll = (event: any): void => {
+  onScroll = (): void => {
     window.requestAnimationFrame( () => {
       this.setScrollRotation()
     }) 
