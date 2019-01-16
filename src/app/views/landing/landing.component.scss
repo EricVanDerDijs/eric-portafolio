@@ -33,11 +33,18 @@ section.landing{
     }
     
     >app-scroll-icon{
-      bottom: 28vh;
+      bottom: 12vh;
+      width: 80px;
+      margin: 0 auto;
       left: 0;
       right: 0;
       position: absolute;
       transform: translateZ(80px);
+      &:not(.shadow){
+        cursor: pointer;
+        background: rgba(255,255,255,0.1);
+        border-radius: 40px;
+      }
       &.shadow{
         transform: translateZ(0);
         background: transparent;

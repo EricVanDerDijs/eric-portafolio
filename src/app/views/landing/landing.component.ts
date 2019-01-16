@@ -27,4 +27,9 @@ export class LandingComponent {
 
   constructor() { }
 
+  scrollNext = ():void => {
+    const nextSection = document.querySelectorAll('section')[1];
+    nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
 }
