@@ -7,10 +7,11 @@
   padding-top: 20vh;
   padding-bottom: 20vh;
   padding-left: 4%;
-  height: 110vh;
+  min-height: 100vh;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   &.mobile{
-    height: 160vh;
     width: calc(100% - 60px);
     margin-left: 60px;
     >[djkParallaxContainer]{
@@ -28,8 +29,7 @@
   }
 
   >[djkParallaxContainer]{
-    padding: 30px;
-    min-height: 98%;
+    padding: 30px;;
 
     >div{
       transform-style: preserve-3d;
