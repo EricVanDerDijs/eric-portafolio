@@ -14,7 +14,7 @@ export const projects: Project[] = [
     year: '2018',
     short_description: 'Frontend. React.',
     description: [
-      'Design and development of an administrative web application for a digital payment solution. This application is being developed with ReactJS and ES6.',
+      'Design and development of an administrative web application for a digital payment solution. This application was developed with ReactJS and ES6.',
       'Currently has the following features:',
       '- Register proccess',
       '- Search and presentation of different elements according to several search filters',
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     ],
     url: 'https://admin.pagodirecto.com/',
     technologies: ['react', 'socketio'],
-    videoUrl: ''
+    videoUrl: 'https://www.youtube.com/embed/QmNmiRmvTWM'
   },
   {
     name: 'dev_Grounds',
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     ],
     technologies: ['node', 'express', 'mongodb', 'bootstrap'],
     url: 'https://dev-grounds.herokuapp.com/',
-    videoUrl: 'https://www.youtube.com/embed/t7yGFfUUO_I?'
+    videoUrl: 'https://www.youtube.com/embed/t7yGFfUUO_I'
   },
   {
     name: 'SmartWolf',
@@ -48,6 +48,6 @@ export const projects: Project[] = [
     ],
     technologies: ['bootstrap', 'html5', 'css3'],
     url: 'http://www.smartwolf.es/',
-    videoUrl: 'https://www.youtube.com/embed/iz7jTvkLeBY?'
+    videoUrl: 'https://www.youtube.com/embed/iz7jTvkLeBY'
   }
 ]
