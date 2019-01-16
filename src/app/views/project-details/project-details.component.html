@@ -5,6 +5,7 @@
       <div class='texts'>
         <h3>{{project.name}}</h3>
         <p>{{project.year}} - {{project.short_description}}</p>
+        <a href="{{project.url}}" target="_blank">go to the site</a>
       </div>
       <div class="close-button">
         <app-close-button
@@ -19,7 +20,9 @@
       <div class='info desktop'>
         <h4>Description</h4>
         <div class="description">
-          <p>{{project.description}}</p>
+          <p *ngFor='let p of project.description'>
+            {{p}}
+          </p>
         </div>
         <h4>Technologies</h4>
         <div class='technologies'>
@@ -56,7 +59,9 @@
         </div>
         <h4>Description</h4>
         <div class="description">
-          <p>{{project.description}}</p>
+          <p *ngFor='let p of project.description'>
+            {{p}}
+          </p>
         </div>
       </div>
   

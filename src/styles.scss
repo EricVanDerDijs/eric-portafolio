@@ -8,6 +8,25 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.20px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+  &::-webkit-scrollbar-track-piece  {
+      background-color: $analog_1;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+      height: 30px;
+      border-radius: 100px;
+      background-color: $textual_blue;
+  }
+
 }
 
 body{
